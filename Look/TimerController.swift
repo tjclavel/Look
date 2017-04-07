@@ -12,7 +12,7 @@ class TimerController: UIViewController {
 
     @IBOutlet weak var timer: UILabel!
     var stringPassed = ""
-    var count = 30
+    var count = 8
     @IBOutlet weak var label: UILabel!
     
     override func viewDidLoad() {
@@ -26,11 +26,11 @@ class TimerController: UIViewController {
     
 
     func decrementCounter() {
-        if(count != 0) {
+        if(count != 1) {
             count -= 1
             timer.text = String(count)
         } else {
-            let drawView = self.storyboard?.instantiateViewController(withIdentifier: "drawController")
+            let drawView = self.storyboard?.instantiateViewController(withIdentifier: "DrawController")
             self.present(drawView!, animated: true, completion: nil)
         }
     }
