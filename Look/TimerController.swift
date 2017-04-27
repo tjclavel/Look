@@ -11,16 +11,18 @@ import UIKit
 class TimerController: UIViewController {
 
     @IBOutlet weak var timer: UILabel!
-    var stringPassed = ""
-    var count = 8
-    @IBOutlet weak var label: UILabel!
+    var count = 3
+    
+    var clock: Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //label.text = self.value(forKey: "pieceName") as! String?
-        label.text = stringPassed
         timer.text = String(count)
-        _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(TimerController.decrementCounter), userInfo: nil, repeats: true)
+        clock = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(TimerController.decrementCounter), userInfo: nil, repeats: true)
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
 
     
@@ -30,8 +32,9 @@ class TimerController: UIViewController {
             count -= 1
             timer.text = String(count)
         } else {
+            clock!.invalidate()
             let drawView = self.storyboard?.instantiateViewController(withIdentifier: "DrawController")
-            self.present(drawView!, animated: true, completion: nil)
+            self.present(drawView!, animated: false, completion: nil)
         }
     }
 

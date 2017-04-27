@@ -10,17 +10,25 @@ import UIKit
 
 class ActivityController: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet weak var nameTextField: UITextField!
-    var pieceName = "";
+    @IBOutlet weak var randomImage: UIImageView!
+    //@IBOutlet weak var nameTextField: UITextField!
+    //var pieceName = "";
     
-    var pieceNames = ["Mona Lisa", "Starry Night", "Boy with Apple"]
+    //var pieceNames = ["Mona Lisa", "Starry Night", "Boy with Apple"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nameTextField.delegate = self
+        //nameTextField.delegate = self
+        
+        let randomPieces = [#imageLiteral(resourceName: "Piece1"), #imageLiteral(resourceName: "Piece2"), #imageLiteral(resourceName: "Piece3")]
+        randomImage.image = randomPieces[Int(arc4random()) % randomPieces.count]
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
+    /*func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
@@ -35,7 +43,7 @@ class ActivityController: UIViewController, UITextFieldDelegate {
             textField.text = ""
             textField.becomeFirstResponder()
         }
-    }
+    }*/
     
     
 
