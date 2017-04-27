@@ -13,7 +13,7 @@ class TimerController: UIViewController {
     @IBOutlet weak var timer: UILabel!
     var count = 3
     
-    var clock: Timer?
+    var clock: Timer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,8 +33,8 @@ class TimerController: UIViewController {
             timer.text = String(count)
         } else {
             clock!.invalidate()
-            let drawView = self.storyboard?.instantiateViewController(withIdentifier: "DrawController")
-            self.present(drawView!, animated: false, completion: nil)
+            let emotionView = self.storyboard?.instantiateViewController(withIdentifier: "EmotionController")
+            self.present(emotionView!, animated: true, completion: nil)
         }
     }
 

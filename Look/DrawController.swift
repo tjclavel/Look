@@ -12,11 +12,13 @@ class DrawController: UIViewController {
     
     var count = 0
     var clock: Timer?
+    var color: UIColor? = UIColor.cyan
     @IBOutlet weak var drawView: DrawView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         clock = Timer.scheduledTimer(timeInterval: 0.02, target: self, selector: #selector(DrawController.decrementCounter), userInfo: nil, repeats: true)
+            drawView.color = color
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -43,7 +45,7 @@ class DrawController: UIViewController {
     }
     
     func decrementCounter() {
-        if(count < 500) {
+        if(count < 350) {
             count += 1
             drawView.count = count
             drawView.setNeedsDisplay()

@@ -12,6 +12,19 @@ class PieceNameController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var textfield: UITextField!
     @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    let pieceNames = [
+        "import UIKit",
+        "class PieceName Controller",
+        "UIViewController",
+        "UITextFieldDelegate",
+        "@IBOutlet weak",
+        "textfield",
+        "label: UILabel!",
+        "let pieceNames",
+        "override"
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +48,10 @@ class PieceNameController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        label.text! += textfield.text!
+        label.text! = textfield.text!
     }
 
+    @IBAction func editingDidChange(_ sender: UITextField) {
+        label.text! = textfield.text!
+    }
 }

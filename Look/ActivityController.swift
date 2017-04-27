@@ -11,15 +11,9 @@ import UIKit
 class ActivityController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var randomImage: UIImageView!
-    //@IBOutlet weak var nameTextField: UITextField!
-    //var pieceName = "";
-    
-    //var pieceNames = ["Mona Lisa", "Starry Night", "Boy with Apple"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //nameTextField.delegate = self
-        
         let randomPieces = [#imageLiteral(resourceName: "Piece1"), #imageLiteral(resourceName: "Piece2"), #imageLiteral(resourceName: "Piece3")]
         randomImage.image = randomPieces[Int(arc4random()) % randomPieces.count]
     }
@@ -28,24 +22,12 @@ class ActivityController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    /*func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        pieceName = textField.text!
-        if(pieceNames.index(of: pieceName) != nil) {
-            let timerView = self.storyboard?.instantiateViewController(withIdentifier: "TimerController") as? TimerController
-            timerView?.stringPassed = pieceName
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+        if(motion == .motionShake) {
+            let timerView = self.storyboard?.instantiateViewController(withIdentifier: "TimerController")
             self.present(timerView!, animated: true, completion: nil)
-        } else {
-            textField.text = ""
-            textField.becomeFirstResponder()
         }
-    }*/
-    
-    
+    }
 
 }
 

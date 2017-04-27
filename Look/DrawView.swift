@@ -20,6 +20,8 @@ class DrawView: UIView {
     var count = 0
     var points = [CGPoint]()
     var savedPoints = [[CGPoint]]()
+    var color: UIColor!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -30,7 +32,8 @@ class DrawView: UIView {
     
     
     func drawPath(_ myPoints: [CGPoint]) {
-        let color:UIColor = UIColor.yellow
+        
+        color.set()
         
         var path = UIBezierPath()
         if(myPoints.count == 1) {
@@ -43,7 +46,6 @@ class DrawView: UIView {
                 }
             }
         }
-        color.set()
         path.lineWidth = 30
         path.lineCapStyle = CGLineCap.round
         path.lineJoinStyle = CGLineJoin.round
@@ -85,7 +87,7 @@ class DrawView: UIView {
         let height = bounds.height
         let perimeter = 2*(width + height)
         let path = UIBezierPath()
-        let len = CGFloat(count) / 500 * perimeter
+        let len = CGFloat(count) / 350 * perimeter
         path.move(to: CGPoint(x: 0, y: 0))
         if(len > width) {
             path.addLine(to: CGPoint(x: width, y: 0))
@@ -104,7 +106,6 @@ class DrawView: UIView {
         else {
             path.addLine(to: CGPoint(x: len, y: 0))
         }
-        UIColor.black.set()
         path.lineWidth = 20
         path.stroke()
         

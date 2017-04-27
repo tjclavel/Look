@@ -18,6 +18,7 @@
 		A6A91C5C1EB0493A00DF7A11 /* DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A91C5B1EB0493A00DF7A11 /* DrawView.swift */; };
 		A6EDCEFB1EB16B9E00674680 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EDCEFA1EB16B9E00674680 /* ViewController.swift */; };
 		A6EDCF291EB1761D00674680 /* PieceNameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EDCF281EB1761D00674680 /* PieceNameController.swift */; };
+		A6EDCF2B1EB1C10700674680 /* EmotionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EDCF2A1EB1C10700674680 /* EmotionController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		A6A91C5B1EB0493A00DF7A11 /* DrawView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawView.swift; sourceTree = "<group>"; };
 		A6EDCEFA1EB16B9E00674680 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A6EDCF281EB1761D00674680 /* PieceNameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieceNameController.swift; sourceTree = "<group>"; };
+		A6EDCF2A1EB1C10700674680 /* EmotionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 			children = (
 				A6973A311E4C1A9400BEDE89 /* AppDelegate.swift */,
 				A6973A331E4C1A9400BEDE89 /* ActivityController.swift */,
+				A6EDCF2A1EB1C10700674680 /* EmotionController.swift */,
 				A6973A351E4C1A9400BEDE89 /* Main.storyboard */,
 				A6EDCEFA1EB16B9E00674680 /* ViewController.swift */,
 				A6973A381E4C1A9400BEDE89 /* Assets.xcassets */,
@@ -216,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6EDCEFB1EB16B9E00674680 /* ViewController.swift in Sources */,
+				A6EDCF2B1EB1C10700674680 /* EmotionController.swift in Sources */,
 				A6973A341E4C1A9400BEDE89 /* ActivityController.swift in Sources */,
 				A6EDCF291EB1761D00674680 /* PieceNameController.swift in Sources */,
 				A6A91C5C1EB0493A00DF7A11 /* DrawView.swift in Sources */,
