@@ -190,10 +190,10 @@
             </objects>
             <point key="canvasLocation" x="2528.8000000000002" y="15.742128935532236"/>
         </scene>
-        <!--View Controller-->
+        <!--Piece Name Controller-->
         <scene sceneID="wUn-On-h0z">
             <objects>
-                <viewController storyboardIdentifier="PieceNameView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iA8-J1-tcs" customClass="ViewController" customModule="Look" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PieceNameView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iA8-J1-tcs" customClass="PieceNameController" customModule="Look" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5yB-so-RZs"/>
                         <viewControllerLayoutGuide type="bottom" id="XVK-fX-Cei"/>
@@ -212,7 +212,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="lbC-Cj-CcN" kind="show" id="aNs-aH-P8i"/>
+                                    <segue destination="lbC-Cj-CcN" kind="showDetail" id="AHD-Zf-WHT"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Which piece did you draw?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NhM-J4-eUp">
@@ -222,13 +222,24 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1ML-MW-kVy">
+                                <rect key="frame" x="51" y="115" width="272" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="NhM-J4-eUp" id="DzQ-hP-jKt"/>
+                        <outlet property="textfield" destination="1ML-MW-kVy" id="4g3-PU-McT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bti-wV-KFt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2529" y="-751"/>
+            <point key="canvasLocation" x="2528.8000000000002" y="-751.57421289355329"/>
         </scene>
     </scenes>
     <resources>

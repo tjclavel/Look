@@ -17,6 +17,7 @@
 		A6973A471E4C1A9400BEDE89 /* LookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6973A461E4C1A9400BEDE89 /* LookTests.swift */; };
 		A6A91C5C1EB0493A00DF7A11 /* DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A91C5B1EB0493A00DF7A11 /* DrawView.swift */; };
 		A6EDCEFB1EB16B9E00674680 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EDCEFA1EB16B9E00674680 /* ViewController.swift */; };
+		A6EDCF291EB1761D00674680 /* PieceNameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EDCF281EB1761D00674680 /* PieceNameController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		A6973A481E4C1A9400BEDE89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6A91C5B1EB0493A00DF7A11 /* DrawView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawView.swift; sourceTree = "<group>"; };
 		A6EDCEFA1EB16B9E00674680 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A6EDCF281EB1761D00674680 /* PieceNameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieceNameController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 				A6EDCEFA1EB16B9E00674680 /* ViewController.swift */,
 				A6973A381E4C1A9400BEDE89 /* Assets.xcassets */,
 				A6973A3A1E4C1A9400BEDE89 /* LaunchScreen.storyboard */,
+				A6EDCF281EB1761D00674680 /* PieceNameController.swift */,
 				A6973A3D1E4C1A9400BEDE89 /* Info.plist */,
 				A62954711E8F19AF009F914F /* TimerController.swift */,
 				A62954731E90640C009F914F /* DrawController.swift */,
@@ -214,6 +217,7 @@
 			files = (
 				A6EDCEFB1EB16B9E00674680 /* ViewController.swift in Sources */,
 				A6973A341E4C1A9400BEDE89 /* ActivityController.swift in Sources */,
+				A6EDCF291EB1761D00674680 /* PieceNameController.swift in Sources */,
 				A6A91C5C1EB0493A00DF7A11 /* DrawView.swift in Sources */,
 				A62954741E90640C009F914F /* DrawController.swift in Sources */,
 				A6973A321E4C1A9400BEDE89 /* AppDelegate.swift in Sources */,
