@@ -8,11 +8,11 @@
 
 import UIKit
 
-class PieceNameController: UIViewController, UITextFieldDelegate {
+class PieceNameController: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var textfield: UITextField!
-    @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var table: UITableView!
+    @IBOutlet weak var returnButton: UIButton!
     
     let pieceNames = [
         "import UIKit",
@@ -26,16 +26,24 @@ class PieceNameController: UIViewController, UITextFieldDelegate {
         "override"
     ]
     
+    var curPieces = [String]()
+    var backgroundColor: UIColor?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        returnButton.isEnabled = false
+        backgroundColor = returnButton.backgroundColor
+        returnButton.backgroundColor = UIColor.gray
         textfield.delegate = self
-        // Do any additional setup after loading the view.
+        table.delegate = self
+        table.dataSource = self
+        table.tableFooterView = UIView()
+        table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
 
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -48,10 +56,41 @@ class PieceNameController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        label.text! = textfield.text!
+        if(curPieces.contains(textfield.text!)) {
+            returnButton.isEnabled = true
+            returnButton.backgroundColor = backgroundColor
+        }
     }
 
     @IBAction func editingDidChange(_ sender: UITextField) {
-        label.text! = textfield.text!
+        if(!curPieces.contains(textfield.text!) && returnButton.isEnabled) {
+            returnButton.isEnabled = false
+            returnButton.backgroundColor = UIColor.gray
+        }
+        let text = textfield.text!.lowercased()
+        curPieces.removeAll()
+        for name in pieceNames {
+            if(name.lowercased().contains(text)) {
+                curPieces.append(name)
+            }
+        }
+        table.reloadData()
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return curPieces.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = table.dequeueReusableCell(withIdentifier: "cell")
+        cell?.textLabel?.text = curPieces[indexPath.row]
+        return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        textfield.text = curPieces[indexPath.row]
+        if(!textFieldShouldReturn(textfield)) {}
+        curPieces.removeAll()
+        table.reloadData()
     }
 }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A62954721E8F19AF009F914F /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62954711E8F19AF009F914F /* TimerController.swift */; };
 		A62954741E90640C009F914F /* DrawController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62954731E90640C009F914F /* DrawController.swift */; };
+		A62F80D21EB2EC0100EC330B /* DisplayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62F80D11EB2EC0100EC330B /* DisplayController.swift */; };
 		A6973A321E4C1A9400BEDE89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6973A311E4C1A9400BEDE89 /* AppDelegate.swift */; };
 		A6973A341E4C1A9400BEDE89 /* ActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6973A331E4C1A9400BEDE89 /* ActivityController.swift */; };
 		A6973A371E4C1A9400BEDE89 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6973A351E4C1A9400BEDE89 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* Begin PBXFileReference section */
 		A62954711E8F19AF009F914F /* TimerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerController.swift; sourceTree = "<group>"; };
 		A62954731E90640C009F914F /* DrawController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawController.swift; sourceTree = "<group>"; };
+		A62F80D11EB2EC0100EC330B /* DisplayController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayController.swift; sourceTree = "<group>"; };
 		A6973A2E1E4C1A9400BEDE89 /* Look.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Look.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6973A311E4C1A9400BEDE89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6973A331E4C1A9400BEDE89 /* ActivityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityController.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				A6973A3A1E4C1A9400BEDE89 /* LaunchScreen.storyboard */,
 				A6EDCF281EB1761D00674680 /* PieceNameController.swift */,
 				A6973A3D1E4C1A9400BEDE89 /* Info.plist */,
+				A62F80D11EB2EC0100EC330B /* DisplayController.swift */,
 				A62954711E8F19AF009F914F /* TimerController.swift */,
 				A62954731E90640C009F914F /* DrawController.swift */,
 				A6A91C5B1EB0493A00DF7A11 /* DrawView.swift */,
@@ -219,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6EDCEFB1EB16B9E00674680 /* ViewController.swift in Sources */,
+				A62F80D21EB2EC0100EC330B /* DisplayController.swift in Sources */,
 				A6EDCF2B1EB1C10700674680 /* EmotionController.swift in Sources */,
 				A6973A341E4C1A9400BEDE89 /* ActivityController.swift in Sources */,
 				A6EDCF291EB1761D00674680 /* PieceNameController.swift in Sources */,

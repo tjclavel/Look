@@ -21,6 +21,7 @@ class DrawView: UIView {
     var points = [CGPoint]()
     var savedPoints = [[CGPoint]]()
     var color: UIColor!
+    var lineWidth = 30
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -46,7 +47,7 @@ class DrawView: UIView {
                 }
             }
         }
-        path.lineWidth = 30
+        path.lineWidth = CGFloat(lineWidth)
         path.lineCapStyle = CGLineCap.round
         path.lineJoinStyle = CGLineJoin.round
         path.stroke(with: CGBlendMode.normal, alpha: 0.5)
@@ -118,6 +119,15 @@ class DrawView: UIView {
     func savePath() {
         savedPoints.append(points)
         points = [CGPoint]()
+    }
+    
+    func getPaths()->[[CGPoint]] {
+        savePath()
+        return savedPoints
+    }
+    
+    func getColor()->UIColor {
+        return color!
     }
 
 }

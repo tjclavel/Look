@@ -44,7 +44,7 @@ class EmotionController: UIViewController, UITextFieldDelegate {
     @IBAction func buttonPressed(_ sender: UIButton) {
         let drawView = self.storyboard?.instantiateViewController(withIdentifier: "DrawController") as! DrawController
         drawView.color = getColor(from: emotion)
-        self.present(drawView, animated: true, completion: nil)
+        self.present(drawView, animated: false, completion: nil)
     }
     
     func getColor(from emotion: String) -> UIColor {
