@@ -89,7 +89,7 @@ class PieceNameController: UIViewController, UITextFieldDelegate, UITableViewDel
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         textfield.text = curPieces[indexPath.row]
-        if(!textFieldShouldReturn(textfield)) {}
+        _ = textFieldShouldReturn(textfield)
         curPieces.removeAll()
         table.reloadData()
     }

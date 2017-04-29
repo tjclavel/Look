@@ -51,10 +51,6 @@ class DrawController: UIViewController {
             drawView.setNeedsDisplay()
         } else {
             clock?.invalidate()
-            let displayView = self.storyboard?.instantiateViewController(withIdentifier: "DisplayController") as! DisplayController
-            displayView.savedPaths.append(drawView.getPaths())
-            displayView.savedColors.append(drawView.getColor())
-            
             let pieceNameView = self.storyboard?.instantiateViewController(withIdentifier: "PieceNameView")
             self.present(pieceNameView!, animated: true, completion: nil)
         }
