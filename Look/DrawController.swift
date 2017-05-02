@@ -15,6 +15,9 @@ class DrawController: UIViewController {
     var color: UIColor? = UIColor.cyan
     @IBOutlet weak var drawView: DrawView!
     
+    var savedPaths = [[[CGPoint]]]()
+    var savedColors = [UIColor]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         clock = Timer.scheduledTimer(timeInterval: 0.02, target: self, selector: #selector(DrawController.decrementCounter), userInfo: nil, repeats: true)
@@ -51,8 +54,17 @@ class DrawController: UIViewController {
             drawView.setNeedsDisplay()
         } else {
             clock?.invalidate()
-            let pieceNameView = self.storyboard?.instantiateViewController(withIdentifier: "PieceNameView")
-            self.present(pieceNameView!, animated: true, completion: nil)
+            let pieceNameView = self.storyboard?.instantiateViewController(withIdentifier: "PieceNameView") as! PieceNameController
+            drawView.savePath()
+            var paths = drawView.getPaths()
+            if paths[paths.count-1].count == 0 {
+                paths.remove(at: paths.count-1)
+            }
+            savedPaths.append(paths)
+            savedColors.append(color!)
+            pieceNameView.savedPaths = savedPaths
+            pieceNameView.savedColors = savedColors
+            self.present(pieceNameView, animated: true, completion: nil)
         }
     }
 

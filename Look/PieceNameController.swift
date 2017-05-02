@@ -13,6 +13,8 @@ class PieceNameController: UIViewController, UITextFieldDelegate, UITableViewDel
     @IBOutlet weak var textfield: UITextField!
     @IBOutlet weak var table: UITableView!
     @IBOutlet weak var returnButton: UIButton!
+    var savedPaths = [[[CGPoint]]]()
+    var savedColors = [UIColor]()
     
     let pieceNames = [
         "import UIKit",
@@ -92,5 +94,12 @@ class PieceNameController: UIViewController, UITextFieldDelegate, UITableViewDel
         _ = textFieldShouldReturn(textfield)
         curPieces.removeAll()
         table.reloadData()
+    }
+    
+    @IBAction func buttonClicked(_ sender: UIButton) {
+        let activityStart = self.storyboard?.instantiateViewController(withIdentifier: "ActivityStart") as! ActivityController
+        activityStart.savedPaths = savedPaths
+        activityStart.savedColors = savedColors
+        self.present(activityStart, animated: true, completion: nil)
     }
 }

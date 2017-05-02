@@ -11,8 +11,10 @@ import UIKit
 class TimerController: UIViewController {
 
     @IBOutlet weak var timer: UILabel!
-    var count = 3
+    var savedPaths = [[[CGPoint]]]()
+    var savedColors = [UIColor]()
     
+    var count = 3
     var clock: Timer!
     
     override func viewDidLoad() {
@@ -33,8 +35,10 @@ class TimerController: UIViewController {
             timer.text = String(count)
         } else {
             clock!.invalidate()
-            let emotionView = self.storyboard?.instantiateViewController(withIdentifier: "EmotionController")
-            self.present(emotionView!, animated: true, completion: nil)
+            let emotionView = self.storyboard?.instantiateViewController(withIdentifier: "EmotionController") as! EmotionController
+            emotionView.savedPaths = savedPaths
+            emotionView.savedColors = savedColors
+            self.present(emotionView, animated: true, completion: nil)
         }
     }
 

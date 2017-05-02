@@ -10,8 +10,8 @@ import UIKit
 
 class GalleryItemView: UIView {
 
-    var paths: [[CGPoint]] = []
-    var color = UIColor.black
+    var paths = [[CGPoint]]()
+    var color = UIColor()
     var lineWidth = CGFloat(30)
     
     func drawPath(_ myPoints: [CGPoint]) {
@@ -34,8 +34,13 @@ class GalleryItemView: UIView {
     
     override func draw(_ rect: CGRect) {
         color.set()
-        for path in paths {
-            drawPath(path)
+        lineWidth /= 2.73
+        for j in 0..<paths.count {
+            for i in 0..<paths[j].count {
+                paths[j][i].x /= 2.73
+                paths[j][i].y /= 2.73
+            }
+            drawPath(paths[j])
         }
     }
 

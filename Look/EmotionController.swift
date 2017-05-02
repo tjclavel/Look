@@ -12,6 +12,9 @@ class EmotionController: UIViewController, UITextFieldDelegate {
 
     
     @IBOutlet weak var textfield: UITextField!
+    var savedPaths = [[[CGPoint]]]()
+    var savedColors = [UIColor]()
+    
     var emotion = ""
     
     override func viewDidLoad() {
@@ -44,6 +47,8 @@ class EmotionController: UIViewController, UITextFieldDelegate {
     @IBAction func buttonPressed(_ sender: UIButton) {
         let drawView = self.storyboard?.instantiateViewController(withIdentifier: "DrawController") as! DrawController
         drawView.color = getColor(from: emotion)
+        drawView.savedPaths = savedPaths
+        drawView.savedColors = savedColors
         self.present(drawView, animated: false, completion: nil)
     }
     
