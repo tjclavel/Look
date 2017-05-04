@@ -12,7 +12,11 @@ class DrawController: UIViewController {
     
     var count = 0
     var clock: Timer?
-    var color: UIColor? = UIColor.cyan
+    var color = UIColor.cyan
+    var delay: Timer?
+    var started = false
+    
+    @IBOutlet weak var label: UILabel!
     @IBOutlet weak var drawView: DrawView!
     
     var savedPaths = [[[CGPoint]]]()
@@ -20,8 +24,15 @@ class DrawController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        clock = Timer.scheduledTimer(timeInterval: 0.02, target: self, selector: #selector(DrawController.decrementCounter), userInfo: nil, repeats: true)
+        self.view.bringSubview(toFront: label)
+        delay = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(DrawController.startDrawing), userInfo: nil, repeats: false)
             drawView.color = color
+    }
+    
+    func startDrawing() {
+        started = true
+        label.removeFromSuperview()
+        clock = Timer.scheduledTimer(timeInterval: 0.02, target: self, selector: #selector(DrawController.decrementCounter), userInfo: nil, repeats: true)
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -29,17 +40,21 @@ class DrawController: UIViewController {
     }
     
     @IBAction func didPan(_ sender: UIPanGestureRecognizer) {
-        drawView.addPoint(sender.location(in: drawView))
-        if(sender.state == UIGestureRecognizerState.ended) {
-            drawView.savePath();
+        if started {
+            drawView.addPoint(sender.location(in: drawView))
+            if(sender.state == UIGestureRecognizerState.ended) {
+                drawView.savePath();
+            }
+            drawView.setNeedsDisplay()
         }
-        drawView.setNeedsDisplay()
     }
     
     @IBAction func didTap(_ sender: UITapGestureRecognizer) {
-        drawView.addPoint(sender.location(in: drawView))
-        drawView.savePath()
-        drawView.setNeedsDisplay()
+        if started {
+            drawView.addPoint(sender.location(in: drawView))
+            drawView.savePath()
+            drawView.setNeedsDisplay()
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -61,7 +76,7 @@ class DrawController: UIViewController {
                 paths.remove(at: paths.count-1)
             }
             savedPaths.append(paths)
-            savedColors.append(color!)
+            savedColors.append(color)
             pieceNameView.savedPaths = savedPaths
             pieceNameView.savedColors = savedColors
             self.present(pieceNameView, animated: true, completion: nil)
