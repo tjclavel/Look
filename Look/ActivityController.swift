@@ -14,7 +14,7 @@ class ActivityController: UIViewController, UITextFieldDelegate {
     
     var savedPaths = [[[CGPoint]]]()
     var savedColors = [UIColor]()
-    var curPic = 1
+    var curPic = 0
     var clock: Timer!
     var pieces = [Int]()
     
@@ -48,7 +48,7 @@ class ActivityController: UIViewController, UITextFieldDelegate {
     (28, "homage to the square, diffused"),
     (29, "horse"),
     (30, "ill hegemann 30"),
-    (31, "iversion x"),
+    (31, "inversion x"),
     (32, "invocation"),
     (33, "italian no. 3"),
     (34, "italian summer"),
@@ -94,16 +94,17 @@ class ActivityController: UIViewController, UITextFieldDelegate {
     (74, "wall painting No. IV"),
     (75, "wend"),
     (76, "woman standing-pink"),
-    (77, "zeltweg"))
+    (0, "zeltweg"))
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        clock = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(ActivityController.switchPhoto), userInfo: nil, repeats: true)
+        clock = Timer.scheduledTimer(timeInterval: 1.8, target: self, selector: #selector(ActivityController.switchPhoto), userInfo: nil, repeats: true)
         for i in 0..<pics.count {
             pieces.append(i)
         }
-        //randomizeList()
-        image.image = UIImage(named: pics[1]!)
+        randomizeList()
+        image.image = UIImage(named: pics[curPic]!)
+        curPic += 1
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -127,9 +128,8 @@ class ActivityController: UIViewController, UITextFieldDelegate {
     }
     
     func switchPhoto() {
-        curPic += 1
-        if curPic == pieces.count + 1 {
-            curPic = 1
+        if curPic == pieces.count {
+            curPic = 0
             randomizeList()
         }
         let transition = CATransition()
@@ -138,6 +138,7 @@ class ActivityController: UIViewController, UITextFieldDelegate {
         transition.type = kCATransitionFade
         image.layer.add(transition, forKey: nil)
         image.image = UIImage(named: pics[pieces[curPic]]!)
+        curPic += 1
     }
     
     @IBAction func startActivity(_ sender: Any) {
