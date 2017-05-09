@@ -50,7 +50,7 @@ class DrawView: UIView {
         path.lineWidth = CGFloat(lineWidth)
         path.lineCapStyle = CGLineCap.round
         path.lineJoinStyle = CGLineJoin.round
-        path.stroke()
+        path.stroke(with: CGBlendMode.normal, alpha: 0.5)
     }
     
     override func draw(_ rect: CGRect) {

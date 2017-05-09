@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DisplayController: UIViewController {
+class DisplayController: UIViewController, UIGestureRecognizerDelegate {
     
 
     @IBOutlet weak var scrollView: UIScrollView!
@@ -17,8 +17,8 @@ class DisplayController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //print(savedColors)
-        //print(savedPaths)
+        let width = scrollView.bounds.midX
+        let height = width//scrollView.bounds.midY
         for i in 0..<savedPaths.count {
             var x: CGFloat = 0
             if i % 2 == 0 {
@@ -26,13 +26,13 @@ class DisplayController: UIViewController {
             } else {
                 x = scrollView.bounds.midX
             }
-            let y = scrollView.bounds.minY + CGFloat(i / 2) * scrollView.bounds.midY
-            let width = scrollView.bounds.midX
-            let height = scrollView.bounds.midY
+            let y = scrollView.bounds.minY + CGFloat(i / 2) * height//scrollView.bounds.midY
             let item = GalleryItemView(frame: CGRect(x: x, y: y, width: width, height: height))
             item.backgroundColor = UIColor.white
             item.color = savedColors[i]
             item.paths = savedPaths[i]
+            item.layer.borderWidth = 1.0
+            item.layer.borderColor = UIColor(colorLiteralRed: 0.95, green: 0.95, blue: 0.95, alpha: 1).cgColor
             scrollView.addSubview(item)
         }
         var nRows = savedPaths.count
@@ -40,7 +40,7 @@ class DisplayController: UIViewController {
             nRows += 1
         }
         nRows /= 2
-        scrollView.contentSize = CGSize(width: 343, height: CGFloat(nRows) * scrollView.bounds.midY)
+        scrollView.contentSize = CGSize(width: 343, height: CGFloat(nRows) * height/*scrollView.bounds.midY*/)
     }
     
     override var prefersStatusBarHidden: Bool {

@@ -14,9 +14,9 @@ class DrawController: UIViewController {
     var clock: Timer?
     var color = UIColor.cyan
     var delay: Timer?
-    var started = false
+    //var started = false
     
-    @IBOutlet weak var label: UILabel!
+    //@IBOutlet weak var label: UILabel!
     @IBOutlet weak var drawView: DrawView!
     
     var savedPaths = [[[CGPoint]]]()
@@ -24,15 +24,17 @@ class DrawController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.bringSubview(toFront: label)
-        delay = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(DrawController.startDrawing), userInfo: nil, repeats: false)
-            drawView.color = color
+        //self.view.bringSubview(toFront: label)
+        //delay = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(DrawController.startDrawing), userInfo: nil, repeats: false)
+        drawView.color = color
+        
+        /* */
+        clock = Timer.scheduledTimer(timeInterval: 0.02, target: self, selector: #selector(DrawController.decrementCounter), userInfo: nil, repeats: true)
     }
     
     func startDrawing() {
-        started = true
-        label.removeFromSuperview()
-        clock = Timer.scheduledTimer(timeInterval: 0.02, target: self, selector: #selector(DrawController.decrementCounter), userInfo: nil, repeats: true)
+        //started = true
+        //label.removeFromSuperview()
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -40,21 +42,21 @@ class DrawController: UIViewController {
     }
     
     @IBAction func didPan(_ sender: UIPanGestureRecognizer) {
-        if started {
+        //if started {
             drawView.addPoint(sender.location(in: drawView))
             if(sender.state == UIGestureRecognizerState.ended) {
                 drawView.savePath();
             }
             drawView.setNeedsDisplay()
-        }
+        //}
     }
     
     @IBAction func didTap(_ sender: UITapGestureRecognizer) {
-        if started {
+        //if started {
             drawView.addPoint(sender.location(in: drawView))
             drawView.savePath()
             drawView.setNeedsDisplay()
-        }
+        //}
     }
     
     override func didReceiveMemoryWarning() {

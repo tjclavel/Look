@@ -11,6 +11,7 @@ import UIKit
 class ActivityController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var button: UIButton!
     
     var savedPaths = [[[CGPoint]]]()
     var savedColors = [UIColor]()
@@ -105,6 +106,9 @@ class ActivityController: UIViewController, UITextFieldDelegate {
         randomizeList()
         image.image = UIImage(named: pics[curPic]!)
         curPic += 1
+        button.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
+        button.titleLabel?.textAlignment = NSTextAlignment.center
+        button.setTitle("▲\nEnd Visit", for: .normal)
     }
     
     override var prefersStatusBarHidden: Bool {

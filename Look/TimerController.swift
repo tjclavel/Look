@@ -14,7 +14,7 @@ class TimerController: UIViewController {
     var savedPaths = [[[CGPoint]]]()
     var savedColors = [UIColor]()
     
-    var count = 3
+    var count = 30
     var clock: Timer!
     
     override func viewDidLoad() {
