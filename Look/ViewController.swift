@@ -11,12 +11,13 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var image: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        button.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
-        button.titleLabel?.textAlignment = NSTextAlignment.center
-        button.setTitle("Start Visit\n▼", for: .normal)
+//        button.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
+//        button.titleLabel?.textAlignment = NSTextAlignment.center
+//        button.setTitle("Start Visit\n▼", for: .normal)
     }
 
     override func didReceiveMemoryWarning() {

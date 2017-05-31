@@ -40,7 +40,7 @@ class DisplayController: UIViewController, UIGestureRecognizerDelegate {
             nRows += 1
         }
         nRows /= 2
-        scrollView.contentSize = CGSize(width: 343, height: CGFloat(nRows) * height/*scrollView.bounds.midY*/)
+        scrollView.contentSize = CGSize(width: scrollView.bounds.width, height: CGFloat(nRows) * height/*scrollView.bounds.midY*/)
     }
     
     override var prefersStatusBarHidden: Bool {

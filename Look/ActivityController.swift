@@ -106,9 +106,9 @@ class ActivityController: UIViewController, UITextFieldDelegate {
         randomizeList()
         image.image = UIImage(named: pics[curPic]!)
         curPic += 1
-        button.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
-        button.titleLabel?.textAlignment = NSTextAlignment.center
-        button.setTitle("▲\nEnd Visit", for: .normal)
+//        button.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
+//        button.titleLabel?.textAlignment = NSTextAlignment.center
+//        button.setTitle("▲\nEnd Visit", for: .normal)
     }
     
     override var prefersStatusBarHidden: Bool {
