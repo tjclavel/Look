@@ -13,8 +13,6 @@ class PieceNameController: UIViewController, UITextFieldDelegate, UITableViewDel
     @IBOutlet weak var textfield: UITextField!
     @IBOutlet weak var table: UITableView!
     @IBOutlet weak var returnButton: UIButton!
-    var savedPaths = [[[CGPoint]]]()
-    var savedColors = [UIColor]()
     
     var pieceNames = [
         "Figure by Window",
@@ -227,8 +225,6 @@ class PieceNameController: UIViewController, UITextFieldDelegate, UITableViewDel
     
     @IBAction func buttonClicked(_ sender: UIButton) {
         let activityStart = self.storyboard?.instantiateViewController(withIdentifier: "ActivityStart") as! ActivityController
-        activityStart.savedPaths = savedPaths
-        activityStart.savedColors = savedColors
         self.present(activityStart, animated: true, completion: nil)
     }
 }

@@ -11,8 +11,6 @@ import UIKit
 class TimerController: UIViewController {
 
     @IBOutlet weak var timer: UILabel!
-    var savedPaths = [[[CGPoint]]]()
-    var savedColors = [UIColor]()
     
     var count = 1
     var clock: Timer!
@@ -36,8 +34,6 @@ class TimerController: UIViewController {
         } else {
             clock!.invalidate()
             let emotionView = self.storyboard?.instantiateViewController(withIdentifier: "EmotionController") as! EmotionController
-            emotionView.savedPaths = savedPaths
-            emotionView.savedColors = savedColors
             self.present(emotionView, animated: true, completion: nil)
         }
     }

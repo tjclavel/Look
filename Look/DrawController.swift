@@ -79,8 +79,6 @@ class DrawController: UIViewController {
             }
             savedPaths.append(paths)
             savedColors.append(color)
-            pieceNameView.savedPaths = savedPaths
-            pieceNameView.savedColors = savedColors
             let defaults = UserDefaults.standard
             //defaults.removeObject(forKey: "sketches")
             //defaults.removeObject(forKey: "colors")

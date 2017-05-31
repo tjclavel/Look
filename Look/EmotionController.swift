@@ -14,8 +14,6 @@ class EmotionController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var textfield: UITextField!
     @IBOutlet weak var drawButton: UIButton!
     
-    var savedPaths = [[[CGPoint]]]()
-    var savedColors = [UIColor]()
     var color = UIColor.cyan
     
     //var emotion = ""
@@ -24,16 +22,6 @@ class EmotionController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         textfield.delegate = self
         // Do any additional setup after loading the view.
-    }
-    
-    override func viewDidLayoutSubviews() {
-        let border = CALayer()
-        let width = CGFloat(2)
-//        border.borderColor = UIColor.black.cgColor
-//        border.frame = CGRect(x: 0, y: textfield.frame.size.height - width, width:  textfield.frame.size.width, height: textfield.frame.size.height)
-//        border.borderWidth = width
-//        textfield.layer.addSublayer(border)
-//        textfield.layer.masksToBounds = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,38 +45,28 @@ class EmotionController: UIViewController, UITextFieldDelegate {
     @IBAction func buttonPressed(_ sender: UIButton) {
         let drawView = self.storyboard?.instantiateViewController(withIdentifier: "DrawController") as! DrawController
         drawView.color = color
-        drawView.savedPaths = savedPaths
-        drawView.savedColors = savedColors
         self.present(drawView, animated: false, completion: nil)
     }
     
     @IBAction func editingDidChange(_ sender: UITextField) {
         color = getColor(from: textfield.text!)
-        if color != UIColor.cyan {
-            drawButton.setTitleColor(color, for: .normal)
-            textfield.textColor = color
-        } else {
-            drawButton.setTitleColor(UIColor.black, for: .normal)
-            textfield.textColor = UIColor.black
-        }
+//        if color != UIColor.cyan {
+//            drawButton.setTitleColor(color, for: .normal)
+//            textfield.textColor = color
+//        } else {
+//            drawButton.setTitleColor(UIColor.black, for: .normal)
+//            textfield.textColor = UIColor.black
+//        }
+        drawButton.setTitleColor(color, for: .normal)
+        textfield.textColor = color
     }
     
     func getColor(from emotion: String) -> UIColor {
-        let emotionL = emotion.lowercased()
-        if(emotionL == "sad") {
-            return UIColor.blue
-        } else if(emotionL == "happy") {
-            return UIColor.yellow
-        } else if(emotionL == "confused") {
-            return UIColor.orange
-        } else if(emotionL == "excited") {
-            return UIColor.green
-        } else if(emotionL == "scared") {
-            return UIColor.red
-        } else if(emotionL == "brave") {
-            return UIColor.magenta
-        }
-        return UIColor.cyan
+        let str = emotion.lowercased()
+        let hash = str.hashValue
+        return UIColor(colorLiteralRed: Float(hash % 7907) / Float(7907), green: Float(hash % 4657) / Float(4657), blue: Float(hash % 2069) / Float(2069), alpha: 1)
     }
+    
+    
 
 }

@@ -23,24 +23,29 @@ class DisplayController: UIViewController, UIGestureRecognizerDelegate {
     override func viewDidAppear(_ animated: Bool) {
         button.layer.zPosition = 1
         let defaults = UserDefaults.standard
-        let allPaths = defaults.array(forKey: "sketches") as! [[[[CGFloat]]]]
+        var allPaths = defaults.array(forKey: "sketches") as? [[[[CGFloat]]]]
+        if(allPaths == nil) {
+            allPaths = [[[[CGFloat]]]]()
+        }
         savedPaths = [[[CGPoint]]]()
-        for i in 0..<allPaths.count {
+        for i in 0..<allPaths!.count {
             savedPaths.append([[CGPoint]]())
-            for j in 0..<allPaths[i].count {
+            for j in 0..<allPaths![i].count {
                 savedPaths[i].append([CGPoint]())
-                for k in 0..<allPaths[i][j].count {
-                    savedPaths[i][j].append(CGPoint(x: allPaths[i][j][k][0], y: allPaths[i][j][k][1]))
+                for k in 0..<allPaths![i][j].count {
+                    savedPaths[i][j].append(CGPoint(x: allPaths![i][j][k][0], y: allPaths![i][j][k][1]))
                 }
             }
         }
         savedColors = [UIColor]()
-        let allColors = defaults.array(forKey: "colors") as! [[CGFloat]]
-        for i in 0..<allColors.count {
-            savedColors.append(UIColor(colorLiteralRed: Float(allColors[i][0]), green: Float(allColors[i][1]), blue: Float(allColors[i][2]), alpha: 1))
+        var allColors = defaults.array(forKey: "colors") as? [[CGFloat]]
+        if(allColors == nil) {
+            allColors = [[CGFloat]]()
+        }
+        for i in 0..<allColors!.count {
+            savedColors.append(UIColor(colorLiteralRed: Float(allColors![i][0]), green: Float(allColors![i][1]), blue: Float(allColors![i][2]), alpha: 1))
         }
         let width = scrollView.bounds.midX
-        print(width)
         let height = width//scrollView.bounds.midY
         for i in 0..<savedPaths.count {
             var x: CGFloat = 0
@@ -75,5 +80,13 @@ class DisplayController: UIViewController, UIGestureRecognizerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func deleteSketches(_ sender: Any) {
+        let defaults = UserDefaults.standard
+        defaults.removeObject(forKey: "sketches")
+        defaults.removeObject(forKey: "colors")
+        for subview in self.scrollView.subviews {
+            subview.removeFromSuperview()
+        }
+    }
 
 }

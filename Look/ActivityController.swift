@@ -10,12 +10,9 @@ import UIKit
 
 class ActivityController: UIViewController, UITextFieldDelegate {
     
-    //@IBOutlet weak var image: UIImageView!
-    //@IBOutlet weak var button: UIButton!
     @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var slider: VerticalSlider!
     
-    var savedPaths = [[[CGPoint]]]()
-    var savedColors = [UIColor]()
     var curPic = 0
     var clock: Timer!
     var pieces = [Int]()
@@ -110,6 +107,7 @@ class ActivityController: UIViewController, UITextFieldDelegate {
 //        button.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
 //        button.titleLabel?.textAlignment = NSTextAlignment.center
 //        button.setTitle("▲\nEnd Visit", for: .normal)
+        slider.parent = self
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -118,8 +116,6 @@ class ActivityController: UIViewController, UITextFieldDelegate {
 
     @IBAction func exitMuseum(_ sender: UIButton) {
         let gallery = self.storyboard?.instantiateViewController(withIdentifier: "Gallery") as! DisplayController
-        gallery.savedPaths = savedPaths
-        gallery.savedColors = savedColors
         self.present(gallery, animated: true, completion: nil)
     }
     
@@ -148,8 +144,8 @@ class ActivityController: UIViewController, UITextFieldDelegate {
     
     @IBAction func startActivity(_ sender: Any) {
         let timerView = self.storyboard?.instantiateViewController(withIdentifier: "TimerController") as! TimerController
-        timerView.savedPaths = savedPaths
-        timerView.savedColors = savedColors
         self.present(timerView, animated: true, completion: nil)
     }
+    
+    
 }
