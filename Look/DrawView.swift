@@ -55,34 +55,10 @@ class DrawView: UIView {
     
     override func draw(_ rect: CGRect) {
         
-        //UIColor.blue.setStroke()
-        //path.stroke()
-        
-        //let drect = CGRect(x: points[points.count-1].x,y: points[points.count-1].y,width: 10,height: 10)
-        //let bpath:UIBezierPath = UIBezierPath(rect: drect)
-        
-        //color.set()
-        //bpath.stroke()
-        //print(String(describing: points))
-        
         for savedPath in savedPoints {
             drawPath(savedPath)
         }
         drawPath(points)
-//
-//        let color:UIColor = UIColor.yellow
-//        
-//        let path = UIBezierPath()
-//        if(points.count >= 1) {
-//            path.move(to: points[0])
-//            for i in 1..<(points.count) {
-//                path.addLine(to: points[i])
-//            }
-//        }
-//        color.set()
-//        path.lineWidth = 40
-//        path.stroke(with: .luminosity, alpha: 1.0)
-//        path.stroke()
         
         let width = bounds.width
         let height = bounds.height

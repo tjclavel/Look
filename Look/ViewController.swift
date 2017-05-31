@@ -9,13 +9,30 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var image: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+//        button.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
+//        button.titleLabel?.textAlignment = NSTextAlignment.center
+//        button.setTitle("Start Visit\n▼", for: .normal)
     }
-
+    
+    /* Persist Data */
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let defaults = UserDefaults.standard
+        //defaults.removeObject(forKey: "hasBeenLoaded")
+        let hasBeenLoaded = defaults.bool(forKey: "hasBeenLoaded")
+        if(!hasBeenLoaded) {
+            defaults.set(true, forKey: "hasBeenLoaded")
+            let tutorial = self.storyboard?.instantiateViewController(withIdentifier: "Tutorial")
+            self.present(tutorial!, animated: true, completion: nil)
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -24,16 +41,5 @@ class ViewController: UIViewController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
