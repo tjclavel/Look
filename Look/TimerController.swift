@@ -14,6 +14,7 @@ class TimerController: UIViewController {
     
     var count = 1
     var clock: Timer!
+    //@IBOutlet weak var gradientView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

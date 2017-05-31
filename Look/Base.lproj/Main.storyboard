@@ -48,7 +48,7 @@ Don't sweat it. We're here to help. </string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JO6-qh-ych" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="942" y="-386"/>
+            <point key="canvasLocation" x="1006" y="-386"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="qcn-HF-4H0">
@@ -82,6 +82,14 @@ Don't sweat it. We're here to help. </string>
                                     <segue destination="Sfa-al-jG8" kind="show" id="ppL-SI-yKX"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17T-7J-QwL">
+                                <rect key="frame" x="24" y="28" width="18" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="i"/>
+                                <connections>
+                                    <segue destination="iaa-oe-L1Z" kind="show" id="UAN-j4-9lK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -112,16 +120,6 @@ Don't sweat it. We're here to help. </string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HRa-D6-SE9">
-                                <rect key="frame" x="283" y="607" width="76" height="40"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <state key="normal" title="Start ▶︎">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="startActivity:" destination="Sfa-al-jG8" eventType="touchUpInside" id="6zt-7j-rjg"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F7c-a2-Vkm">
                                 <rect key="frame" x="319" y="45" width="40" height="40"/>
                                 <constraints>
@@ -141,9 +139,7 @@ Don't sweat it. We're here to help. </string>
                         </subviews>
                         <color key="backgroundColor" red="0.24313725490196078" green="0.31764705882352939" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="AMu-da-aeW" firstAttribute="top" secondItem="HRa-D6-SE9" secondAttribute="bottom" constant="20" id="1vV-YQ-lsM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="F7c-a2-Vkm" secondAttribute="trailing" id="3MR-Tn-mSN"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="HRa-D6-SE9" secondAttribute="trailing" id="VEl-09-sIo"/>
                             <constraint firstItem="F7c-a2-Vkm" firstAttribute="top" secondItem="kxI-KN-Eac" secondAttribute="bottom" constant="25" id="q4n-Pk-DiU"/>
                         </constraints>
                     </view>
@@ -154,7 +150,7 @@ Don't sweat it. We're here to help. </string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wcx-id-4gD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1800.8" y="392.65367316341832"/>
+            <point key="canvasLocation" x="1006" y="1085"/>
         </scene>
         <!--Display Controller-->
         <scene sceneID="yw3-PR-Saa">
@@ -213,7 +209,7 @@ Don't sweat it. We're here to help. </string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MgK-1S-g0E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1800.8" y="-386.35682158920542"/>
+            <point key="canvasLocation" x="1902" y="393"/>
         </scene>
         <!--Timer Controller-->
         <scene sceneID="FuZ-E3-7q9">
@@ -234,7 +230,7 @@ Don't sweat it. We're here to help. </string>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.24313725489999999" green="0.31764705879999999" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.23921568630000001" green="0.32156862749999998" blue="0.42745098040000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="86E-Bt-dBU" firstAttribute="centerY" secondItem="4pj-Ia-JKJ" secondAttribute="centerY" id="G6j-iA-yW1"/>
                             <constraint firstItem="86E-Bt-dBU" firstAttribute="centerX" secondItem="4pj-Ia-JKJ" secondAttribute="centerX" id="qBJ-lo-wwY"/>
@@ -246,7 +242,7 @@ Don't sweat it. We're here to help. </string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="enP-gd-HQn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2661.5999999999999" y="392.65367316341832"/>
+            <point key="canvasLocation" x="1902" y="1084"/>
         </scene>
         <!--Emotion Controller-->
         <scene sceneID="rTH-yw-SPj">
@@ -345,7 +341,7 @@ Don't sweat it. We're here to help. </string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zwp-cj-XDL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3480.8000000000002" y="392.65367316341832"/>
+            <point key="canvasLocation" x="2804" y="1084"/>
         </scene>
         <!--Draw Controller-->
         <scene sceneID="adx-f3-rCy">
@@ -393,7 +389,7 @@ Don't sweat it. We're here to help. </string>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="4357.6000000000004" y="392.65367316341832"/>
+            <point key="canvasLocation" x="3684" y="1084"/>
         </scene>
         <!--Piece Name Controller-->
         <scene sceneID="wUn-On-h0z">
@@ -481,7 +477,7 @@ Don't sweat it. We're here to help. </string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bti-wV-KFt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5173.6000000000004" y="392.65367316341832"/>
+            <point key="canvasLocation" x="4574" y="1084"/>
         </scene>
     </scenes>
     <resources>
