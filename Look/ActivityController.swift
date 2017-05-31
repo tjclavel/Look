@@ -10,7 +10,8 @@ import UIKit
 
 class ActivityController: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet weak var image: UIImageView!
+    //@IBOutlet weak var image: UIImageView!
+    //@IBOutlet weak var button: UIButton!
     @IBOutlet weak var button: UIButton!
     
     var savedPaths = [[[CGPoint]]]()
