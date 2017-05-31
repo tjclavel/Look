@@ -51,13 +51,14 @@ class VerticalSlider: UIView, UIGestureRecognizerDelegate {
     var isMoving = false;
     
     func handlePan(sender: UIPanGestureRecognizer) {
-        if sender.state == .began && sender.translation(in: self).y < rect!.width {
+        let newY = sender.translation(in: self).y
+        if sender.state == .began && newY < rect!.width {
             isMoving = true
         }
         
-        if isMoving && sender.state == .changed {
-            dy = sender.translation(in: self).y
-            if sender.translation(in: self).y > rect!.height - 2*rect!.width {
+        if isMoving && sender.state == .changed && newY < rect!.height - rect!.width && newY > 0 {
+            dy = newY
+            if dy > rect!.height - 1.5*rect!.width {
                 color = UIColor.green
             } else {
                 color = UIColor.white
@@ -66,7 +67,7 @@ class VerticalSlider: UIView, UIGestureRecognizerDelegate {
         }
         if sender.state == .ended {
             isMoving = false
-            if sender.translation(in: self).y > rect!.height - 2*rect!.width {
+            if newY > rect!.height - 1.5*rect!.width {
                 parent?.startActivity(UIButton())
             } else {
                 dy = 0

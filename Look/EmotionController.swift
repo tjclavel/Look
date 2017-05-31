@@ -21,6 +21,7 @@ class EmotionController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         textfield.delegate = self
+        textfield.layer.zPosition = 1
         // Do any additional setup after loading the view.
     }
 

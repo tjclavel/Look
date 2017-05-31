@@ -148,6 +148,7 @@ class PieceNameController: UIViewController, UITextFieldDelegate, UITableViewDel
         backgroundColor = returnButton.backgroundColor
         //returnButton.backgroundColor = UIColor.gray
         textfield.delegate = self
+        textfield.layer.zPosition = 1
         table.delegate = self
         table.dataSource = self
         table.tableFooterView = UIView()
