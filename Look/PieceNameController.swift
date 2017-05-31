@@ -148,7 +148,7 @@ class PieceNameController: UIViewController, UITextFieldDelegate, UITableViewDel
         super.viewDidLoad()
         returnButton.isEnabled = false
         backgroundColor = returnButton.backgroundColor
-        returnButton.backgroundColor = UIColor.gray
+        //returnButton.backgroundColor = UIColor.gray
         textfield.delegate = self
         table.delegate = self
         table.dataSource = self
@@ -157,13 +157,13 @@ class PieceNameController: UIViewController, UITextFieldDelegate, UITableViewDel
     }
 
         override func viewDidLayoutSubviews() {
-            let border = CALayer()
-            let width = CGFloat(2)
-            border.borderColor = UIColor.black.cgColor
-            border.frame = CGRect(x: 0, y: textfield.frame.size.height - width, width:  textfield.frame.size.width, height: textfield.frame.size.height)
-            border.borderWidth = width
-            textfield.layer.addSublayer(border)
-            textfield.layer.masksToBounds = true
+//            let border = CALayer()
+//            let width = CGFloat(2)
+//            border.borderColor = UIColor.black.cgColor
+//            border.frame = CGRect(x: 0, y: textfield.frame.size.height - width, width:  textfield.frame.size.width, height: textfield.frame.size.height)
+//            border.borderWidth = width
+//            textfield.layer.addSublayer(border)
+//            textfield.layer.masksToBounds = true
         }
     
     override func didReceiveMemoryWarning() {
@@ -182,14 +182,14 @@ class PieceNameController: UIViewController, UITextFieldDelegate, UITableViewDel
     func textFieldDidEndEditing(_ textField: UITextField) {
         if(curPieces.contains(textfield.text!)) {
             returnButton.isEnabled = true
-            returnButton.backgroundColor = backgroundColor
+            //returnButton.backgroundColor = backgroundColor
         }
     }
 
     @IBAction func editingDidChange(_ sender: UITextField) {
         if(!curPieces.contains(textfield.text!) && returnButton.isEnabled) {
             returnButton.isEnabled = false
-            returnButton.backgroundColor = UIColor.gray
+            //returnButton.backgroundColor = UIColor.gray
         }
         let text = textfield.text!.lowercased()
         curPieces.removeAll()

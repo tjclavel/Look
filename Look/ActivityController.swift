@@ -99,13 +99,13 @@ class ActivityController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        clock = Timer.scheduledTimer(timeInterval: 1.8, target: self, selector: #selector(ActivityController.switchPhoto), userInfo: nil, repeats: true)
-        for i in 0..<pics.count {
-            pieces.append(i)
-        }
-        randomizeList()
-        image.image = UIImage(named: pics[curPic]!)
-        curPic += 1
+//        clock = Timer.scheduledTimer(timeInterval: 1.8, target: self, selector: #selector(ActivityController.switchPhoto), userInfo: nil, repeats: true)
+//        for i in 0..<pics.count {
+//            pieces.append(i)
+//        }
+//        randomizeList()
+//        image.image = UIImage(named: pics[curPic]!)
+//        curPic += 1
 //        button.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
 //        button.titleLabel?.textAlignment = NSTextAlignment.center
 //        button.setTitle("▲\nEnd Visit", for: .normal)
@@ -122,28 +122,28 @@ class ActivityController: UIViewController, UITextFieldDelegate {
         self.present(gallery, animated: true, completion: nil)
     }
     
-    func randomizeList() {
-        for i in 0..<pieces.count {
-            let temp = pieces[i]
-            let rand = Int(arc4random()) % pieces.count
-            pieces[i] = pieces[rand]
-            pieces[rand] = temp
-        }
-    }
+//    func randomizeList() {
+//        for i in 0..<pieces.count {
+//            let temp = pieces[i]
+//            let rand = Int(arc4random()) % pieces.count
+//            pieces[i] = pieces[rand]
+//            pieces[rand] = temp
+//        }
+//    }
     
-    func switchPhoto() {
-        if curPic == pieces.count {
-            curPic = 0
-            randomizeList()
-        }
-        let transition = CATransition()
-        transition.duration = 0.45
-        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-        transition.type = kCATransitionFade
-        image.layer.add(transition, forKey: nil)
-        image.image = UIImage(named: pics[pieces[curPic]]!)
-        curPic += 1
-    }
+//    func switchPhoto() {
+//        if curPic == pieces.count {
+//            curPic = 0
+//            randomizeList()
+//        }
+//        let transition = CATransition()
+//        transition.duration = 0.45
+//        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+//        transition.type = kCATransitionFade
+//        image.layer.add(transition, forKey: nil)
+//        image.image = UIImage(named: pics[pieces[curPic]]!)
+//        curPic += 1
+//    }
     
     @IBAction func startActivity(_ sender: Any) {
         let timerView = self.storyboard?.instantiateViewController(withIdentifier: "TimerController") as! TimerController

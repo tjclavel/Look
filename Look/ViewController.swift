@@ -18,10 +18,7 @@ class ViewController: UIViewController {
 //        button.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
 //        button.titleLabel?.textAlignment = NSTextAlignment.center
 //        button.setTitle("Start Visit\n▼", for: .normal)
-        
-        
     }
-    
     
     /* Persist Data */
     
@@ -35,7 +32,7 @@ class ViewController: UIViewController {
             self.present(tutorial!, animated: true, completion: nil)
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
