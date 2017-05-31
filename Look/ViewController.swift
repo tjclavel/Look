@@ -18,6 +18,22 @@ class ViewController: UIViewController {
 //        button.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
 //        button.titleLabel?.textAlignment = NSTextAlignment.center
 //        button.setTitle("Start Visit\n▼", for: .normal)
+        
+        
+    }
+    
+    
+    /* Persist Data */
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let defaults = UserDefaults.standard
+        //defaults.removeObject(forKey: "hasBeenLoaded")
+        let hasBeenLoaded = defaults.bool(forKey: "hasBeenLoaded")
+        if(!hasBeenLoaded) {
+            defaults.set(true, forKey: "hasBeenLoaded")
+            let tutorial = self.storyboard?.instantiateViewController(withIdentifier: "Tutorial")
+            self.present(tutorial!, animated: true, completion: nil)
+        }
     }
 
     override func didReceiveMemoryWarning() {

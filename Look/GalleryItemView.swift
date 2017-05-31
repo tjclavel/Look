@@ -11,7 +11,7 @@ import UIKit
 class GalleryItemView: UIView {
 
     var paths = [[CGPoint]]()
-    var color = UIColor()
+    var color = UIColor.cyan
     var lineWidth = CGFloat(30)
     
     func drawPath(_ myPoints: [CGPoint]) {

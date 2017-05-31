@@ -81,6 +81,34 @@ class DrawController: UIViewController {
             savedColors.append(color)
             pieceNameView.savedPaths = savedPaths
             pieceNameView.savedColors = savedColors
+            let defaults = UserDefaults.standard
+            //defaults.removeObject(forKey: "sketches")
+            //defaults.removeObject(forKey: "colors")
+            defaults.removeObject(forKey: "titles")
+            var pieces = defaults.array(forKey: "sketches")
+            if(pieces == nil) {
+                pieces = [[[[CGFloat]]]]()
+            }
+            var pieces2 = [[[CGFloat]]]()
+            for i in 0..<paths.count {
+                pieces2.append([[CGFloat]]())
+                for j in 0..<paths[i].count {
+                    pieces2[i].append([CGFloat]())
+                    pieces2[i][j] = [paths[i][j].x, paths[i][j].y]
+                }
+            }
+            pieces?.append(pieces2)
+            defaults.set(pieces, forKey: "sketches")
+            var colors = defaults.array(forKey: "colors")
+            if(colors == nil) {
+                colors = [[CGFloat]]()
+            }
+            var red: CGFloat = 0
+            var green: CGFloat = 0
+            var blue: CGFloat = 0
+            color.getRed(&red, green: &green, blue: &blue, alpha: nil)
+            colors?.append([red, green, blue])
+            defaults.set(colors, forKey: "colors")
             self.present(pieceNameView, animated: true, completion: nil)
         }
     }

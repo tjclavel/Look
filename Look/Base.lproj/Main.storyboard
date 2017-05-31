@@ -12,6 +12,33 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
+        <scene sceneID="org-OH-EYZ">
+            <objects>
+                <viewController storyboardIdentifier="Tutorial" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BdH-yW-obr" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AzW-oX-too"/>
+                        <viewControllerLayoutGuide type="bottom" id="IaU-S7-ok5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="983-t2-u66">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tutorial" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hTp-Iv-Rkl">
+                                <rect key="frame" x="166" y="271" width="57" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="meZ-ct-rhq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1005.6" y="-444.82758620689657"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="qcn-HF-4H0">
             <objects>
                 <viewController id="lbC-Cj-CcN" customClass="ViewController" customModule="Look" customModuleProvider="target" sceneMemberID="viewController">

@@ -17,6 +17,23 @@ class DisplayController: UIViewController, UIGestureRecognizerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let defaults = UserDefaults.standard
+        let allPaths = defaults.array(forKey: "sketches") as! [[[[CGFloat]]]]
+        savedPaths = [[[CGPoint]]]()
+        for i in 0..<allPaths.count {
+            savedPaths.append([[CGPoint]]())
+            for j in 0..<allPaths[i].count {
+                savedPaths[i].append([CGPoint]())
+                for k in 0..<allPaths[i][j].count {
+                    savedPaths[i][j].append(CGPoint(x: allPaths[i][j][k][0], y: allPaths[i][j][k][1]))
+                }
+            }
+        }
+        savedColors = [UIColor]()
+        let allColors = defaults.array(forKey: "colors") as! [[CGFloat]]
+        for i in 0..<allColors.count {
+            savedColors.append(UIColor(colorLiteralRed: Float(allColors[i][0]), green: Float(allColors[i][1]), blue: Float(allColors[i][2]), alpha: 1))
+        }
         let width = scrollView.bounds.midX
         let height = width//scrollView.bounds.midY
         for i in 0..<savedPaths.count {
