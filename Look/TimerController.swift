@@ -12,7 +12,7 @@ class TimerController: UIViewController {
 
     @IBOutlet weak var timer: UILabel!
     
-    var count = 1
+    var count = 30
     var clock: Timer!
     //@IBOutlet weak var gradientView: UIView!
     

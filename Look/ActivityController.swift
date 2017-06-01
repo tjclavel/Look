@@ -114,10 +114,10 @@ class ActivityController: UIViewController, UITextFieldDelegate {
         return true
     }
 
-    @IBAction func exitMuseum(_ sender: UIButton) {
-        let gallery = self.storyboard?.instantiateViewController(withIdentifier: "Gallery") as! DisplayController
-        self.present(gallery, animated: true, completion: nil)
-    }
+//    @IBAction func exitMuseum(_ sender: UIButton) {
+//        let gallery = self.storyboard?.instantiateViewController(withIdentifier: "Gallery") as! DisplayController
+//        self.present(gallery, animated: true, completion: nil)
+//    }
     
 //    func randomizeList() {
 //        for i in 0..<pieces.count {

@@ -19,6 +19,7 @@
 		A6973A3C1E4C1A9400BEDE89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6973A3A1E4C1A9400BEDE89 /* LaunchScreen.storyboard */; };
 		A6973A471E4C1A9400BEDE89 /* LookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6973A461E4C1A9400BEDE89 /* LookTests.swift */; };
 		A6A91C5C1EB0493A00DF7A11 /* DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A91C5B1EB0493A00DF7A11 /* DrawView.swift */; };
+		A6C1B22E1EE09E67007C43F4 /* TutorialController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C1B22D1EE09E67007C43F4 /* TutorialController.swift */; };
 		A6EDCEFB1EB16B9E00674680 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EDCEFA1EB16B9E00674680 /* ViewController.swift */; };
 		A6EDCF291EB1761D00674680 /* PieceNameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EDCF281EB1761D00674680 /* PieceNameController.swift */; };
 		A6EDCF2B1EB1C10700674680 /* EmotionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EDCF2A1EB1C10700674680 /* EmotionController.swift */; };
@@ -51,6 +52,7 @@
 		A6973A461E4C1A9400BEDE89 /* LookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookTests.swift; sourceTree = "<group>"; };
 		A6973A481E4C1A9400BEDE89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6A91C5B1EB0493A00DF7A11 /* DrawView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawView.swift; sourceTree = "<group>"; };
+		A6C1B22D1EE09E67007C43F4 /* TutorialController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialController.swift; sourceTree = "<group>"; };
 		A6EDCEFA1EB16B9E00674680 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A6EDCF281EB1761D00674680 /* PieceNameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieceNameController.swift; sourceTree = "<group>"; };
 		A6EDCF2A1EB1C10700674680 /* EmotionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				A6973A3D1E4C1A9400BEDE89 /* Info.plist */,
 				A6973A381E4C1A9400BEDE89 /* Assets.xcassets */,
 				A6EDCEFA1EB16B9E00674680 /* ViewController.swift */,
+				A6C1B22D1EE09E67007C43F4 /* TutorialController.swift */,
 				A6973A331E4C1A9400BEDE89 /* ActivityController.swift */,
 				A60BEF551EDF0A5400016135 /* VerticalSlider.swift */,
 				A62954711E8F19AF009F914F /* TimerController.swift */,
@@ -238,6 +241,7 @@
 				A6973A321E4C1A9400BEDE89 /* AppDelegate.swift in Sources */,
 				A60BEF561EDF0A5400016135 /* VerticalSlider.swift in Sources */,
 				A62954721E8F19AF009F914F /* TimerController.swift in Sources */,
+				A6C1B22E1EE09E67007C43F4 /* TutorialController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
