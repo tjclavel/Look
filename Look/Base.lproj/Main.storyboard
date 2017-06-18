@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -70,13 +71,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="andersonLogo" translatesAutoresizingMaskIntoConstraints="NO" id="5PM-zm-GQa">
-                                <rect key="frame" x="75" y="60" width="224" height="39"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="224" id="adO-C6-7Ce"/>
-                                    <constraint firstAttribute="height" constant="39" id="oMV-qO-XmS"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FgE-Nw-QPN">
                                 <rect key="frame" x="157" y="575" width="60" height="60"/>
                                 <constraints>
@@ -112,18 +106,33 @@
                                     <segue destination="rl5-zZ-DAm" kind="show" id="WNZ-af-yRq"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="andersonLogo" translatesAutoresizingMaskIntoConstraints="NO" id="oqd-JP-qiM">
+                                <rect key="frame" x="42" y="44" width="290" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="290" id="Evn-0L-FIO"/>
+                                    <constraint firstAttribute="height" constant="44" id="Q9m-dt-Xon"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="building" translatesAutoresizingMaskIntoConstraints="NO" id="SnC-dm-xRl">
+                                <rect key="frame" x="26" y="172" width="323" height="323"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="SnC-dm-xRl" secondAttribute="height" multiplier="1:1" id="uAF-3A-eoV"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="RdY-Cv-hvp" firstAttribute="leading" secondItem="FgE-Nw-QPN" secondAttribute="trailing" constant="35" id="8Nc-yd-QCY"/>
                             <constraint firstItem="ABO-aV-4l8" firstAttribute="top" secondItem="FgE-Nw-QPN" secondAttribute="bottom" constant="32" id="Ad5-qh-G8O"/>
+                            <constraint firstItem="SnC-dm-xRl" firstAttribute="centerY" secondItem="48U-8g-r5d" secondAttribute="centerY" id="E31-Bo-Kob"/>
                             <constraint firstItem="ABO-aV-4l8" firstAttribute="top" secondItem="17T-7J-QwL" secondAttribute="bottom" constant="32" id="PmK-xj-1Hd"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="5PM-zm-GQa" secondAttribute="trailing" constant="60" id="VtU-Sl-jIG"/>
+                            <constraint firstItem="oqd-JP-qiM" firstAttribute="centerX" secondItem="48U-8g-r5d" secondAttribute="centerX" id="QbO-xj-N3K"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SnC-dm-xRl" secondAttribute="trailing" constant="10" id="VgZ-Be-TwC"/>
                             <constraint firstItem="FgE-Nw-QPN" firstAttribute="centerX" secondItem="48U-8g-r5d" secondAttribute="centerX" id="a6B-Pv-Ap9"/>
                             <constraint firstItem="FgE-Nw-QPN" firstAttribute="leading" secondItem="17T-7J-QwL" secondAttribute="trailing" constant="35" id="cal-2g-Fcw"/>
                             <constraint firstItem="ABO-aV-4l8" firstAttribute="top" secondItem="RdY-Cv-hvp" secondAttribute="bottom" constant="32" id="fIi-gb-8lb"/>
-                            <constraint firstItem="5PM-zm-GQa" firstAttribute="top" secondItem="oEB-wk-Lce" secondAttribute="bottom" constant="40" id="q3r-Pf-vzn"/>
-                            <constraint firstItem="5PM-zm-GQa" firstAttribute="leading" secondItem="48U-8g-r5d" secondAttribute="leadingMargin" constant="59" id="vG9-Gf-vCl"/>
+                            <constraint firstItem="oqd-JP-qiM" firstAttribute="top" secondItem="oEB-wk-Lce" secondAttribute="bottom" constant="24" id="gYz-QU-f2y"/>
+                            <constraint firstItem="SnC-dm-xRl" firstAttribute="leading" secondItem="48U-8g-r5d" secondAttribute="leadingMargin" constant="10" id="xG8-lX-rje"/>
                         </constraints>
                     </view>
                     <connections>
@@ -515,8 +524,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="andersonLogo" width="612" height="792"/>
+        <image name="andersonLogo" width="684" height="104"/>
         <image name="back" width="86" height="86"/>
+        <image name="building" width="306" height="306"/>
         <image name="check" width="86" height="86"/>
         <image name="gallery" width="86" height="86"/>
         <image name="info" width="86" height="86"/>
